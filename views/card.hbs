@@ -1,0 +1,34 @@
+<h1>Warenkorb</h1>
+
+<div id="card">
+  {{#if courses.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>Bezeichnung</th>
+          <th>Anzahl</th>
+          <th>Aktion</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each courses}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{count}}</td>
+            <td>
+              <button class="btn btn-small js-remove" data-id="{{id}}">Entfernen</button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p><strong>Preis: </strong><span class="price">{{price}}</span></p>
+
+    <form action="/orders" method="POST">
+      <button type="submit" class="btn btn-large blue">Bestellen</button>
+    </form>
+  {{else}}
+    <p>Warenkorb ist leer</p>
+  {{/if}}
+</div>
