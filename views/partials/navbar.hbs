@@ -15,20 +15,31 @@
         <li> <a href="/courses">Kurse</a> </li>
       {{/if}}
 
-      {{#if isAdd}}
-        <li class="active"> <a href="/add">Kurs hinzufügen</a> </li>
+      {{#if isAuth}}
+        {{#if isAdd}}
+          <li class="active"> <a href="/add">Kurs hinzufügen</a> </li>
+        {{else}}
+          <li> <a href="/add">Kurs hinzufügen</a> </li>
+        {{/if}}
+
+        {{#if isCard}}
+          <li class="active"> <a href="/card">Warenkorb</a> </li>
+        {{else}}
+          <li> <a href="/card">Warenkorb</a> </li>
+        {{/if}}
+
+        {{#if isOrder}}
+          <li class="active"> <a href="/orders">Bestellungen</a> </li>
+        {{else}}
+          <li> <a href="/orders">Bestellungen</a> </li>
+        {{/if}}
+        <li> <a href="/auth/logout">Logout</a> </li>
       {{else}}
-        <li> <a href="/add">Kurs hinzufügen</a> </li>
-      {{/if}}
-      {{#if isCard}}
-        <li class="active"> <a href="/card">Warenkorb</a> </li>
-      {{else}}
-        <li> <a href="/card">Warenkorb</a> </li>
-      {{/if}}
-      {{#if isOrder}}
-        <li class="active"> <a href="/orders">Bestellungen</a> </li>
-      {{else}}
-        <li> <a href="/orders">Bestellungen</a> </li>
+        {{#if isLogin}}
+          <li class="active"> <a href="/auth/login#login">Login</a> </li>
+        {{else}}
+          <li> <a href="/auth/login#login">Login</a> </li>
+        {{/if}}
       {{/if}}
     </ul>
   </div>
