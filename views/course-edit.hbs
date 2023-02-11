@@ -20,11 +20,16 @@
     <span class="helper-text" data-error="URL des Bildes eingeben" ></span>
   </div>
 
+  <input type="hidden" name="_csrf" value="{{csrf}}" />
+
   <input type="hidden" name="id" value="{{course.id}}">
   <button type="submit" class="btn btn-primary">Bearbeten</button>
 </form>
 
 <form action="/courses/remove" method="POST">
+
+  <input type="hidden" name="_csrf" value="{{csrf}}" />
+
   <input type="hidden" name="id" value="{{course.id}}">
   <button class="btn red">Löschen</button>
 </form>
