@@ -16,8 +16,8 @@ const addRoutes = require("./routes/add");
 const authRoutes = require("./routes/auth");
 const varMiddleware = require("./middleware/variables");
 const userMiddleware = require("./middleware/user");
+const keys = require("./keys");
 
-const MONGODB_URI = `mongodb+srv://alex:iehtd5yKKr2dAQbf@cluster0.rgmovcm.mongodb.net/shop`;
 const app = express();
 const hbs = exphbs.create({
   defaultLayout: "main",
@@ -27,7 +27,7 @@ const hbs = exphbs.create({
 
 const store = new MongoStore({
   collection: "session",
-  uri: MONGODB_URI,
+  uri: keys.MONGODB_URI,
 });
 
 app.engine("hbs", hbs.engine);
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: "some secret value",
+    secret: keys.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store,
@@ -61,18 +61,7 @@ const PORT = process.env.PORT || 3000;
 async function start() {
   try {
     await mongoose.set("strictQuery", false);
-    await mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
-    // const candidate = await User.findOne();
-
-    // if (!candidate) {
-    //   const user = new User({
-    //     email: "alexb@gmx.de",
-    //     name: "Alex",
-    //     cart: { items: [] },
-    //   });
-    //   console.log(user);
-    //   await user.save();
-    // }
+    await mongoose.connect(keys.MONGODB_URI, { useNewUrlParser: true });
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);

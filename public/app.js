@@ -48,7 +48,11 @@ if ($card) {
               <td>${c.title}</td>
               <td>${c.count}</td>
               <td>
-                <button class="btn btn-small js-remove" data-id="${c.id}">Entfernen</button>
+                <button 
+                class="btn btn-small js-remove" 
+                data-id="${c.id}"
+                data-csrf="${csrf}"
+                >Entfernen</button>
               </td>
             </tr>`;
               })
