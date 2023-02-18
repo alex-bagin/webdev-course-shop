@@ -7,9 +7,10 @@ module.exports = function (email) {
     subject: "Account ist erstellt",
     html: `
     <h1>Herzlich willkommen in unserem Shop</h1>
-    <p>Sie haben sich erfolgreich registriert mit email - ${email}</p>
+    
+    <h4>Sie haben sich erfolgreich registriert mit der Email - ${email}</h4>
     <hr/>
-    <a href="${keys.BASE_URL}">StorWebKurse</a>
+    <h4><a href="${keys.BASE_URL}">StorWebKurse</a></h4>
     `,
   };
 };

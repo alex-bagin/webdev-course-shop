@@ -29,6 +29,8 @@
 
         <input type="hidden" name="_csrf" value="{{csrf}}" />
 
+        <p><a href="/auth/reset">Passwort vergessen?</a></p>
+
         <button class="btn btn-primery" type="submit">Sign In</button>
 
       </form>
@@ -40,7 +42,7 @@
       {{/if}}
 
       <h1>Account erstellen</h1>
-      <form action="/auth/register" method="POST">
+      <form action="/auth/register" method="POST" novalidate>
 
         <div class="input-field">
           <input id="name" name="name" type="text" class="validate" required />

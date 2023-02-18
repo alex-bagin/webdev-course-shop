@@ -19,10 +19,12 @@ const userMiddleware = require("./middleware/user");
 const keys = require("./keys");
 
 const app = express();
+
 const hbs = exphbs.create({
   defaultLayout: "main",
   extname: "hbs",
   handlebars: allowInsecurePrototypeAccess(Handlebars),
+  helpers: require("./utils/hbs-helpers"),
 });
 
 const store = new MongoStore({
