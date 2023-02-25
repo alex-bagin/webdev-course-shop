@@ -1,27 +1,31 @@
 <h1>Kurse hinzufügen</h1>
 
-<form action="/add" method="POST">
+{{#if error}}
+ <p class="alert">{{error}}</p>
+{{/if}}
+
+<form action="/add" method="POST" novalidate>
 
   <div class="input-field">
-    <input id="title" name="title" type="text" class="validate" required />
+    <input id="title" name="title" type="text" class="validate" required value="{{data.title}}" />
     <label for="title">Kursname</label>
-    <span class="helper-text" data-error="Kusnamen eingeben" ></span>
+    <span class="helper-text" data-error="Kusnamen eingeben"></span>
   </div>
 
   <div class="input-field">
-    <input id="price" name="price" type="number" class="validate" required min="1"/>
+    <input id="price" name="price" type="number" class="validate" required min="1" value="{{data.price}}"/>
     <label for="price">Preis</label>
-    <span class="helper-text" data-error="Preis eingeben" ></span>
+    <span class="helper-text" data-error="Preis eingeben"></span>
   </div>
 
   <div class="input-field">
-    <input id="img" name="img" type="text" class="validate" required/>
+    <input id="img" name="img" type="text" class="validate" required  value="{{data.img}}"/>
     <label for"img">URL des Bildes</label>
-    <span class="helper-text" data-error="URL des Bildes eingeben" ></span>
+    <span class="helper-text" data-error="URL des Bildes eingeben"></span>
   </div>
 
   <input type="hidden" name="_csrf" value="{{csrf}}" />
 
-  <button class="btn btn-primery" >Kurs hinzufügen</button>
+  <button class="btn btn-primery">Kurs hinzufügen</button>
 
 </form>

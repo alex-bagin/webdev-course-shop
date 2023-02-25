@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema({
   email: {
@@ -10,6 +10,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  avatarUrl: String,
   resetToken: String,
   resetTokenExp: Date,
   cart: {
@@ -21,7 +22,7 @@ const userSchema = new Schema({
         },
         courseId: {
           type: Schema.Types.ObjectId,
-          ref: "Course",
+          ref: 'Course',
           required: true,
         },
       },
@@ -68,4 +69,4 @@ userSchema.methods.clearCart = function () {
   return this.save();
 };
 
-module.exports = model("User", userSchema);
+module.exports = model('User', userSchema);

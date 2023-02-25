@@ -1,0 +1,49 @@
+<h1>Profil</h1>
+
+<div class='row'>
+  <div class='col s6'>
+    {{#if user.avatarUrl}}
+      <img
+        class='avatar'
+        src='/{{user.avatarUrl}}'
+        alt='avatar-{{user.name}}'
+      />
+    {{else}}
+      <p>Profilbild nicht vorhanden</p>
+    {{/if}}
+  </div>
+
+  <div class='col s6'>
+    <form action='/profile' method='POST' enctype='multipart/form-data'>
+
+      <p>Ihre Email: <strong>{{user.email}}</strong></p>
+
+      <div class='input-field'>
+        <input
+          id='name'
+          name='name'
+          type='text'
+          class='validate'
+          required
+          value='{{user.name}}'
+        />
+        <label for='title'>Ihr Name</label>
+        <span class='helper-text' data-error='Name darf nicht leer sein'></span>
+
+        <div class='file-field input-field'>
+          <div class='btn'>
+            <span>Profilbild</span>
+            <input type='file' name='avatar' />
+          </div>
+          <div class='file-path-wrapper'>
+            <input class='file-path validate' type='text' />
+          </div>
+        </div>
+      </div>
+
+      <input type='hidden' name='_csrf' value='{{csrf}}' />
+      <button type='submit' class='btn'>Ändern</button>
+    </form>
+
+  </div>
+</div>

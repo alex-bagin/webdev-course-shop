@@ -45,6 +45,13 @@
   border-radius: 10px;
   text-align: center;
   margin-bottom: 1rem;
-  background: rgba(255, 0, 0, 0.2);
-  color: red;
+  background: rgba(251, 43, 43, 0.112);
+  color: rgb(255, 0, 0);
+}
+
+.avatar {
+  max-width: 300px;
+  height: 350px;
+  border-radius: 25px;
+  object-fit: cover;
 }

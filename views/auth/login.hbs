@@ -13,7 +13,7 @@
       {{/if}}
 
       <h1>Webshop betreten</h1>
-      <form action="/auth/login " method="POST">
+      <form action="/auth/login " method="POST" novalidate>
 
         <div class="input-field">
           <input id="email" name="email" type="text" class="validate" required />
@@ -42,7 +42,7 @@
       {{/if}}
 
       <h1>Account erstellen</h1>
-      <form action="/auth/register" method="POST" novalidate>
+      <form action="/auth/register" method="POST" >
 
         <div class="input-field">
           <input id="name" name="name" type="text" class="validate" required />
