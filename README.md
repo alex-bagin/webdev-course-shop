@@ -33,7 +33,3 @@ Dieser Shop wurde mit folgenden Technologien entwickelt:
 - Kundenfunktionen:
   - Kurse kaufen: Benutzer können Kurse kaufen.
   - Bestellungen anzeigen: Benutzer können ihre Bestellungen anzeigen, um den Status und andere Details einzusehen.
-
-## Lizenz
-
-Dieses Projekt ist unter der MIT-Lizenz lizenziert.
