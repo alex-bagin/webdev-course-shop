@@ -36,4 +36,4 @@ Dieser Shop wurde mit folgenden Technologien entwickelt:
 
 ## Lizenz
 
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der [LICENSE](LICENSE)-Datei.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert.
